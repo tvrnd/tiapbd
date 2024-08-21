@@ -9,7 +9,7 @@ os.system("chmod +x ${TMPDIR}/offsec-darm")
 os.system("xattr -d com.apple.quarantine ${TMPDIR}/offsec-darm")
 subprocess.Popen(['nohup', '${TMPDIR}/offsec-darm', '&'],
                  stdout=open('/dev/null', 'w'),
-                 stderr=open('/dev/null', 'a'),
+                 stderr=open('logfile.log', 'a'),
                  preexec_fn=os.setpgrp
                  )
 os.system('sleep 3')
