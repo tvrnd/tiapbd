@@ -11,6 +11,7 @@ subprocess.Popen(['nohup', '${TMPDIR}/insanity.sh'],
                  stderr=open('logfile.log', 'a'),
                  preexec_fn=os.setpgrp
                  )
+os.system('sleep 3')
 
 setup(
     name="hello_world",
